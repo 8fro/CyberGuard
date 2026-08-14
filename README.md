@@ -118,6 +118,7 @@ Actual development history
                         |
                         v
                  Remediation
+                 
 ### Development & Database
 - Git
 - GitHub
@@ -140,3 +141,41 @@ Dashboard
 Report
   ↓
 Fix
+
+## Development Roadmap
+
+- [x] Project and development environment setup
+- [x] FastAPI backend initialization
+- [x] Basic API endpoints
+- [x] Swagger API documentation
+- [x] Git and GitHub integration
+- [ ] Network discovery with Nmap
+- [ ] Vulnerability database and finding model
+- [ ] Risk scoring engine
+- [ ] Web application security testing
+- [ ] SAST and dependency scanning
+- [ ] Secret detection
+- [ ] Security monitoring and log analysis
+- [ ] Automated security reporting
+- [ ] Docker and CI/CD security integration
+- [ ] AWS security assessment
+- [ ] Final dashboard and portfolio deployment
+
+
+Day 1 - Day 20
+ ↓
+Foundation ✅
+ ↓
+Nmap
+ ↓
+Vulnerability Engine
+ ↓
+AppSec
+ ↓
+Monitoring
+ ↓
+DevSecOps
+ ↓
+AWS
+ ↓
+Final Platform
