@@ -55,3 +55,88 @@ Objective
 Current Progress
    ↓
 Actual development history
+
+## Technology Stack
+
+### Backend
+- Python
+- FastAPI
+
+### Security Tools
+- Nmap
+- Wireshark
+- OWASP ZAP
+- Semgrep
+- Trivy
+- Gitleaks
+- Metasploit
+
+### Security Domains
+- Network Security
+- Web Application Security
+- Vulnerability Assessment & Penetration Testing
+- Security Monitoring
+- Vulnerability Management
+- DevSecOps
+
+### Infrastructure & Cloud
+- Linux / Kali Linux
+- Docker
+- GitHub Actions
+- AWS
+
+## Architecture
+
+```text          
+
+                   CyberGuard
+                        |
+                        v
+                Security Assessment
+                        |
+        +---------------+---------------+
+        |               |               |
+        v               v               v
+    Network           Web             Source Code
+      Scan          Security             Scan
+      Nmap          OWASP/ZAP           SAST
+        |               |               |
+        +---------------+---------------+
+                        |
+                        v
+              Vulnerability Engine
+                        |
+                        v
+                  Risk Scoring
+                        |
+              +---------+---------+
+              |                   |
+              v                   v
+         Dashboard             Reports
+              |                   |
+              +---------+---------+
+                        |
+                        v
+                 Remediation
+### Development & Database
+- Git
+- GitHub
+- PostgreSQL
+
+
+### Is architecture ka meaning:
+
+```text
+Target
+  ↓
+Security testing
+  ↓
+Findings
+  ↓
+Risk
+  ↓
+Dashboard
+  ↓
+Report
+  ↓
+Fix
