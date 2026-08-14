@@ -179,3 +179,13 @@ DevSecOps
 AWS
  ↓
 Final Platform
+
+## Security Testing Scope
+
+CyberGuard is developed and tested in controlled and authorized environments.
+
+Security testing activities are performed only against systems, applications, and infrastructure for which explicit authorization has been obtained. The project is intended for defensive security assessment, vulnerability identification, monitoring, and remediation.
+
+## Project Status
+
+CyberGuard is currently under active development. Features are being implemented incrementally as part of a 20-day cybersecurity engineering project.
