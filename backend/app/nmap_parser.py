@@ -6,24 +6,53 @@ def parse_nmap_xml(file_path):
     root = tree.getroot()
 
     host = root.find("host")
-    port_element = host.find("./ports/port")
-    service_element = port_element.find("service")
 
-    result = {
-        "target": host.find("address").get("addr"),
-        "port": int(port_element.get("portid")),
-        "protocol": port_element.get("protocol"),
-        "state": port_element.find("state").get("state"),
-        "service": service_element.get("name"),
-        "product": service_element.get("product"),
-        "version": service_element.get("version"),
-        "extra_info": service_element.get("extrainfo"),
-        "cpe": service_element.findtext("cpe"),
-    }
+    if host is None:
+        return []
 
-    return result
+    address_element = host.find("address")
+
+    if address_element is None:
+        return []
+
+    target = address_element.get("addr")
+
+    findings = []
+
+    for port_element in host.findall("./ports/port"):
+        state_element = port_element.find("state")
+        service_element = port_element.find("service")
+
+        finding = {
+            "target": target,
+            "port": int(port_element.get("portid")),
+            "protocol": port_element.get("protocol"),
+            "state": state_element.get("state") if state_element is not None else None,
+            "service": None,
+            "product": None,
+            "version": None,
+            "extra_info": None,
+            "cpe": None,
+        }
+
+        if service_element is not None:
+            finding["service"] = service_element.get("name")
+            finding["product"] = service_element.get("product")
+            finding["version"] = service_element.get("version")
+            finding["extra_info"] = service_element.get("extrainfo")
+            finding["cpe"] = service_element.findtext("cpe")
+
+        findings.append(finding)
+
+    return findings
 
 
 if __name__ == "__main__":
-    scan_result = parse_nmap_xml("scans/first_scan.xml")
-    print(scan_result)
+    scan_file = "scans/scan_82c5250b.xml"
+
+    results = parse_nmap_xml(scan_file)
+
+    print("Nmap Findings:")
+
+    for finding in results:
+        print(finding)
